@@ -2,11 +2,9 @@ import { prisma } from "../prisma/client";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
-export class AuthService
-{
+export class AuthService {
 
-    async create(email: string, senha: string)
-    {
+    async create(email: string, senha: string) {
 
         const isUserCreated = await prisma.user.findUnique({
             where: {
@@ -14,11 +12,9 @@ export class AuthService
             }
         });
 
-        if(isUserCreated)
-        {
-            throw new Error(
-                "Usuário ou senha inválido"
-            );
+        // Requisito 7: Garantir que não existe outro usuário com o mesmo email
+        if (isUserCreated) {
+            throw new Error("Já existe um usuário cadastrado com este email.");
         }
 
         const senhaHashed = await bcrypt.hash(senha, 10);
@@ -26,7 +22,7 @@ export class AuthService
         const dados = {
             email,
             senha: senhaHashed
-        }
+        };
 
         const user = await prisma.user.create({
             data: dados,
@@ -35,31 +31,24 @@ export class AuthService
         return {
             id: user.id,
             email: user.email
-        }
+        };
     }
 
-    async login(email: string, senha: string)
-    {
+    async login(email: string, senha: string) {
         const user = await prisma.user.findUnique({
             where: {
                 email,
             }
         });
 
-        if(!user)
-        {
-            throw new Error(
-                "Usuário ou senha inválido"
-            );
+        if (!user) {
+            throw new Error("Usuário ou senha inválido.");
         }
 
         const senhaMatch = await bcrypt.compare(senha, user.senha);
 
-        if(!senhaMatch)
-        {
-            throw new Error(
-                "Usuário ou senha inválido"
-            )
+        if (!senhaMatch) {
+            throw new Error("Usuário ou senha inválido.");
         }
 
         const token = jwt.sign(
@@ -73,7 +62,6 @@ export class AuthService
         );
         return {
             token,
-        }
+        };
     }
-
 }

@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { filmeRoutes } from './routes/filme.routes';
+import { livroRoutes } from './routes/livro.routes';
 import { authRoutes } from './routes/auth.routes';
 import cookieParser from 'cookie-parser';
 
@@ -13,7 +13,7 @@ app.use(cors({
 }));
 
 app.use(cookieParser());
-app.use('/filmes',filmeRoutes);
+app.use('/livros', livroRoutes);
 app.use('/auth', authRoutes);
 
 export {app};
