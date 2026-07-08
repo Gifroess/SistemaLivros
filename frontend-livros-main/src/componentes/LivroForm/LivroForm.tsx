@@ -3,29 +3,29 @@
 import '@/componentes/FilmeForm/FilmeForm.css'
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Filme } from "@/tipos/filme";
+import { Livro } from "@/tipos/livro";
 import {
-  createFilmes,
-  updateFilme,
-} from "@/services/filme.services"
+  createLivro,
+  updateLivro,
+} from "@/services/livro.services"
 
 interface Props {
-  filme?: Filme;
+  livro?: Livro;
 }
 
-export default function FilmeForm({ filme }: Props) {
+export default function LivroForm({ livro }: Props) {
   const router = useRouter();
 
     const [titulo, setTitulo] = useState(
-    filme?.titulo ?? ""
+    livro?.titulo ?? ""
     );
 
     const [imagem, setImagem] = useState(
-    filme?.imagem ?? ""
+    livro?.imagem ?? ""
     );
 
     const [nota, setNota] = useState(
-    filme?.nota ?? 0
+    livro?.nota ?? 0
     );
    
     async function handleSubmit( e: React.SyntheticEvent) {
@@ -37,10 +37,10 @@ export default function FilmeForm({ filme }: Props) {
             nota,
         };
 
-        if (filme) {
-            await updateFilme( filme.id, payload);
+        if (livro) {
+            await updateLivro( livro.id, payload);
         } else {
-            await createFilmes(payload);
+            await createLivro(payload);
         }
 
         router.push("/");
@@ -48,11 +48,11 @@ export default function FilmeForm({ filme }: Props) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="filme-form">
+        <form onSubmit={handleSubmit} className="livro-form">
         <h1>
-        {filme
-            ? "Editar Filme"
-            : "Novo Filme"}
+        {livro
+            ? "Editar Livro"
+            : "Novo Livro"}
         </h1>
         <div className="form-input">
             <input

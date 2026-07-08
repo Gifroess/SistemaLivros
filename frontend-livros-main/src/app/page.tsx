@@ -1,5 +1,5 @@
-import FilmeGrid from "@/componentes/FilmesGrid/FilmesGrid";
-import { getFilmes } from "@/services/filme.services";
+import FilmeGrid from "@/componentes/LivrosGrid/LivrosGrid";
+import { getFilmes } from "@/services/livro.services";
 import Link from "next/link";
 import styles from '@/app/page.module.css';
 import { cookies } from "next/headers";

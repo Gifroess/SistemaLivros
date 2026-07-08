@@ -1,4 +1,4 @@
-.filme-form {
+.livro-form {
   max-width: 300rem;
   min-width: 40rem;
   margin: 2rem auto;
@@ -15,7 +15,7 @@
 }
 
 
-.filme-form h2 {
+.livro-form h2 {
   text-align: center;
 
   margin-bottom: 0.5rem;
@@ -28,7 +28,7 @@
   gap: 0.4rem;
 }
 
-.filme-form button {
+.livro-form button {
   padding: 0.85rem;
   max-width: 20rem;
   min-width: 10rem;
@@ -42,6 +42,6 @@
   transition: opacity 0.2s;
 }
 
-.filme-form button:hover {
+.livro-form button:hover {
   opacity: 0.9;
 }

@@ -1,4 +1,4 @@
-import FilmeForm from "@/componentes/FilmeForm/FilmeForm";
+import FilmeForm from "@/componentes/LivroForm/LivroForm";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 

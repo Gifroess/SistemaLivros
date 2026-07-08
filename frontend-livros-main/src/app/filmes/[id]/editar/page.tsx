@@ -1,5 +1,5 @@
-import FilmeForm from "@/componentes/FilmeForm/FilmeForm";
-import { getFilme } from "@/services/filme.services";
+import FilmeForm from "@/componentes/LivroForm/LivroForm";
+import { getFilme } from "@/services/livro.services";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
