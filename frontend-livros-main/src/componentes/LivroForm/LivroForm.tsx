@@ -16,8 +16,28 @@ interface Props {
 export default function LivroForm({ livro }: Props) {
   const router = useRouter();
 
+    const [busca, setBusca] = useState(
+        ""
+    );
+
+    const [resultados, setResultados] = useState(
+        []
+    );
+
     const [titulo, setTitulo] = useState(
     livro?.titulo ?? ""
+    );
+
+    const [autor, setAutor] = useState(
+    livro?.autor ?? ""
+    );
+
+    const [status, setStatus] = useState(
+    livro?.status ?? "QUERO_LER"
+    );
+
+    const [review, setReview] = useState(
+    livro?.review ?? ""
     );
 
     const [imagem, setImagem] = useState(
@@ -27,13 +47,20 @@ export default function LivroForm({ livro }: Props) {
     const [nota, setNota] = useState(
     livro?.nota ?? 0
     );
+
+    const livros = await buscarLivrosGoogle(busca);
+
+    setResultados(livros);
    
     async function handleSubmit( e: React.SyntheticEvent) {
         e.preventDefault();
 
         const payload = {
             titulo,
+            autor,
             imagem,
+            status,
+            review,
             nota,
         };
 

@@ -1,4 +1,4 @@
-import {Livro, CreateLivroDTO, UpdateLivroDTO} from "@/tipos/livro";
+import {Livro, LivroGoogle, CreateLivroDTO, UpdateLivroDTO} from "@/tipos/livro";
 
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL;
@@ -21,7 +21,7 @@ export async function getLivros(cookieHeader?: string): Promise<Livro[]>
 
 }
 
-export async function buscarLivrosGoogle(termo: string)
+export async function buscarLivrosGoogle(termo: string): Promise<LivroGoogle[]> 
 {
     const response = await fetch(`${API_URL}/livros/busca/google?q=${encodeURIComponent(termo)}`,
         {

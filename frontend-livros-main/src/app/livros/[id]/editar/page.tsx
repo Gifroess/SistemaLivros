@@ -1,5 +1,5 @@
-import FilmeForm from "@/componentes/LivroForm/LivroForm";
-import { getFilme } from "@/services/livro.services";
+import LivroForm from "@/componentes/LivroForm/LivroForm";
+import { getLivro } from "@/services/livro.services";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -10,7 +10,7 @@ interface Props {
   }>;
 }
 
-export default async function EditarFilmePage({
+export default async function EditarLivroPage({
   params,
 }: Props) {
   const { id } = await params;
@@ -24,11 +24,11 @@ export default async function EditarFilmePage({
   if(!token)
     redirect('/login');
 
-  const filme = await getFilme(id, cookieHeader);
+  const livro = await getLivro(id, cookieHeader);
 
   return (
     <>
-      <FilmeForm filme={filme} />
+      <LivroForm livro={livro} />
     </>
   );
 }

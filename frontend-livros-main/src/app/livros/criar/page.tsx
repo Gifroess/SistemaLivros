@@ -1,9 +1,9 @@
-import FilmeForm from "@/componentes/LivroForm/LivroForm";
+import LivroForm from "@/componentes/LivroForm/LivroForm";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 
-export default async function CriarFilmePage() {
+export default async function CriarLivroPage() {
 
     const cookieStore = await cookies();
   
@@ -14,7 +14,7 @@ export default async function CriarFilmePage() {
 
   return (
     <>
-      <FilmeForm />
+      <LivroForm />
     </>
   );
 }
