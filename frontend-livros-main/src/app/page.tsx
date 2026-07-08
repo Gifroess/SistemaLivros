@@ -1,5 +1,5 @@
-import FilmeGrid from "@/componentes/LivrosGrid/LivrosGrid";
-import { getFilmes } from "@/services/livro.services";
+import LivroGrid from "@/componentes/LivrosGrid/LivrosGrid";
+import { getLivro } from "@/services/livro.services";
 import Link from "next/link";
 import styles from '@/app/page.module.css';
 import { cookies } from "next/headers";
@@ -18,21 +18,21 @@ export default async function Home() {
     redirect('/login');
   }
 
-  const filmes = await getFilmes(cookieHeader);
+  const livros = await getLivro(cookieHeader);
 
   return (
     <main className={styles.home}>
       <header className={styles.homeHeader}>
           <div>
-              <h1> 🎬 Filmes</h1>
-              <p>Gerencie seus filmes</p>
+              <h1> 📚 Livros</h1>
+              <p>Gerencie seus livros</p>
           </div>
 
-          <Link href="/filmes/criar" className={styles.btnAdd}>
-            + Adicionar Filme
+          <Link href="/livros/criar" className={styles.btnAdd}>
+            + Adicionar Livro
           </Link>
       </header>
-      <FilmeGrid filmes={filmes} />
+      <LivroGrid livros={livros} />
     </main>
   );
 }
