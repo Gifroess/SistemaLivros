@@ -3,11 +3,9 @@
 import '@/componentes/FilmeForm/FilmeForm.css'
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Livro } from "@/tipos/livro";
-import {
-  createLivro,
-  updateLivro,
-} from "@/services/livro.services"
+import BuscaLivro from "../BuscaLivro/BuscaLivro"
+import { Livro, LivroGoogle, StatusLivro } from "@/tipos/livro";
+import {createLivro, updateLivro} from "@/services/livro.services"
 
 interface Props {
   livro?: Livro;
@@ -15,14 +13,6 @@ interface Props {
 
 export default function LivroForm({ livro }: Props) {
   const router = useRouter();
-
-    const [busca, setBusca] = useState(
-        ""
-    );
-
-    const [resultados, setResultados] = useState(
-        []
-    );
 
     const [titulo, setTitulo] = useState(
     livro?.titulo ?? ""
@@ -32,7 +22,7 @@ export default function LivroForm({ livro }: Props) {
     livro?.autor ?? ""
     );
 
-    const [status, setStatus] = useState(
+    const [status, setStatus] = useState<StatusLivro>(
     livro?.status ?? "QUERO_LER"
     );
 
@@ -74,6 +64,15 @@ export default function LivroForm({ livro }: Props) {
         router.refresh();
     }
 
+    function selecionarLivro(livro: LivroGoogle){
+
+        setTitulo(livro.titulo);
+
+        setAutor(livro.autor);
+
+        setImagem(livro.imagem ?? "");
+    }
+
     return (
         <form onSubmit={handleSubmit} className="livro-form">
         <h1>
@@ -81,35 +80,84 @@ export default function LivroForm({ livro }: Props) {
             ? "Editar Livro"
             : "Novo Livro"}
         </h1>
-        <div className="form-input">
-            <input
-                value={titulo}
-                onChange={(e) =>
-                setTitulo(e.target.value)
-            }
-            placeholder="Título"
-        />
-        </div>
-        <div className="form-input">
-            <input
-                value={imagem}
-                onChange={(e) =>
-                setImagem(e.target.value)
-                }
-            placeholder="URL Imagem"
-        />
-        </div>
-        <div className="form-input">
-            <input
-                type="number"
-                defaultValue={nota}
-                onChange={(e) =>
-                setNota(Number(e.target.value))
-                }
+        {!livro && (
+            <BuscaLivro
+                onSelect={selecionarLivro}
             />
+        )}
+
+        {titulo && (
+
+        <div className="livro-selecionado">
+
+            <h3>Livro selecionado</h3>
+
+            {imagem ? (
+
+                <Image
+                    src={imagem}
+                    alt={titulo}
+                    width={120}
+                    height={180}
+                />
+
+            ) : (
+
+                <div className="sem-imagem">
+
+                    Sem capa
+
+                </div>
+
+            )}
+
+            <h2>{titulo}</h2>
+
+            <p>{autor}</p>
+
         </div>
-        <button type="submit">
-            Salvar
+
+        )}
+        <div className="form-input">
+
+        <label>Status</label>
+
+        <select
+
+        value={status}
+
+        onChange={(e)=> setStatus(e.target.value as StatusLivro)}
+
+        >
+
+        <option value="QUERO_LER"> Quero ler </option>
+
+        <option value="LENDO"> Lendo </option>
+
+        <option value="LIDO"> Lido </option>
+
+        </select>
+
+        </div>
+
+        <div className="form-input">
+
+        <label>Nota</label>
+
+        <input type="number" min={0} max={5} step={0.5} value={nota} onChange={(e)=>setNota(Number(e.target.value))}/>
+
+        </div>
+
+        <div className="form-input">
+
+        <label>Review</label>
+
+        <textarea rows={5} value={review} onChange={(e)=> setReview(e.target.value)}/>
+
+        </div>
+
+        <button type="submit" disabled={!titulo}>
+            {livro ? "Atualizar Livro": "Salvar livro"}
         </button>
         </form>
     );
