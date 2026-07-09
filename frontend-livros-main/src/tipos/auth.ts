@@ -4,6 +4,13 @@ export interface LoginDTO
     senha: string;
 }
 
+export interface CreateDTO
+{
+    email: string;
+    senha: string;
+    confirmacaoSenha: string;
+}
+
 export interface LoginResponse {
   token: string;
 }
