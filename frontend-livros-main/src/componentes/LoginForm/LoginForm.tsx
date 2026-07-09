@@ -43,13 +43,7 @@ export default function LoginForm()
     return(
 
         <form onSubmit={handleSubmit} className="login-form ">
-            <Image 
-              src="/logo-tmdb.svg"
-              alt="Logo TMDB"
-              width={200}
-              height={40}
-              className="logo-img"
-            />
+            <h2>Login</h2>
             <div className="div-input">
                 <input 
                     type="email" 
