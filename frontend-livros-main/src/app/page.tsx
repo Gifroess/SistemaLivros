@@ -1,5 +1,5 @@
 import LivroGrid from "@/componentes/LivrosGrid/LivrosGrid";
-import { getLivro } from "@/services/livro.services";
+import { getLivros } from "@/services/livro.services";
 import Link from "next/link";
 import styles from "@/app/page.module.css";
 import { cookies } from "next/headers";
@@ -16,7 +16,7 @@ export default async function Home() {
         redirect("/login");
     }
 
-    const livros = await getLivro(cookieHeader);
+    const livros = await getLivros(cookieHeader);
 
     return (
         <main className={styles.home}>
