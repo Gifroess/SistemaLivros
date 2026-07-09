@@ -15,7 +15,7 @@ export default function CreateForm()
 
     const [email, setEmail] =  useState("");
     const [senha, setSenha] =  useState("");
-    const [confSenha,setConfSenha] = useState("");
+    const [confirmacaoSenha, setConfirmacaoSenha] = useState("");
 
     async function handleSubmit(e : React.SyntheticEvent)
     {
@@ -25,7 +25,7 @@ export default function CreateForm()
         const result = createSchema.safeParse({
             email,
             senha,
-            confSenha,
+            confirmacaoSenha,
         });
 
         if (!result.success) {
@@ -36,7 +36,7 @@ export default function CreateForm()
             return;
         }
         try {
-            await create({email,senha});
+            await create({email,senha, confirmacaoSenha: confirmacaoSenha});
             toast.success("Usuário criado com sucesso");
             router.push('/login');  
         } catch (error) {
@@ -46,7 +46,7 @@ export default function CreateForm()
 
     return(
 
-        <form onSubmit={handleSubmit} className="login-form">
+        <form method="POST" onSubmit={handleSubmit} className="login-form">
             <Image 
                 src="/logo-tmdb.svg"
                 alt="Logo TMDB"
@@ -74,14 +74,14 @@ export default function CreateForm()
             </div>
             <div className="div-input">
                 <input type="password"
-                    value={confSenha}
-                    onChange={(e) => setConfSenha(e.target.value)}
+                    value={confirmacaoSenha}
+                    onChange={(e) => setConfirmacaoSenha(e.target.value)}
                     placeholder="Confirmar Senha"
                     aria-label="Confirmar Senha" 
                 />
             </div>
 
-            <button>Criar Conta</button>
+            <button type="submit">Criar Conta</button>
         </form>
     )
 

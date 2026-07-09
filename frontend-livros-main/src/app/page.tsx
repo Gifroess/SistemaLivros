@@ -23,7 +23,7 @@ export default async function Home() {
 
             <header className={styles.homeHeader}>
                 <div>
-                    <h1>📚 Meus Livros</h1>
+                    <h1> 📚 Livros</h1>
                     <p>Gerencie seus livros</p>
                 </div>
 
