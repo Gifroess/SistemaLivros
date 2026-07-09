@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Livro } from "@/tipos/livro"
-import '@/componentes/LivroCard/LivroCard.css";
+import "@/componentes/LivroCard/LivroCard.css";
 import Image from "next/image";
 
 interface LivroCardProps {
