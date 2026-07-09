@@ -24,7 +24,8 @@ export default async function Header(){
                             <>
                             <li>
                                 <Link href="/login">Login</Link>
-                            </li>|
+                            </li>
+
                             <li>
                                 <Link href="/create">Criar Conta</Link> 
                             </li>

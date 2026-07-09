@@ -1,25 +1,20 @@
 .header{
-    background-color: rgb(58, 58, 58);
+    background: linear-gradient(90deg, #ffffff, #b8e4ff);
     display: flex;
     justify-content: space-between;
     
     height: 5rem;
+    padding: 0 2rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
 
     a,ul, button{
         text-decoration: none;
-        color: white;
     }
 
-    a:hover, button:hover{
-        text-decoration: underline;
-    }
-
-    li:hover, button:hover{
-        background-color: rgb(72, 72, 72);
-    }
     button{
-        background-color: rgba(0,0,0,0);
+        background-color: trasparent;
         border: none;
+        cursor: pointer;
     }
     li{
         list-style: none;
@@ -35,3 +30,71 @@
         padding: 0 1rem;
     }
 }
+
+.header nav a {
+
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+
+    color: #222;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.header nav a:hover {
+
+    color: #3292E7;
+
+}
+
+.header div a[href="/login"] {
+
+    display: inline-block;
+
+    padding: 0.7rem 1.8rem;
+
+    border: 0.1rem solid #3292E7;
+    border-radius: 2rem;
+
+    color: #3292E7;
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: all 0.2s;
+
+}
+
+.header div a[href="/create"] {
+
+    display: inline-block;
+
+    padding: 0.7rem 1.8rem;
+
+    border-radius: 2rem;
+
+    background-color: #459CF7;
+
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: opacity 0.2s;
+
+}
+
+.header div a[href="/create"]:hover {
+
+    opacity: 0.9;
+
+}
+.header div a[href="/login"]:hover {
+
+    background-color: #459CF7;
+    color: white;
+    border-color: transparent;
+
+}
+
