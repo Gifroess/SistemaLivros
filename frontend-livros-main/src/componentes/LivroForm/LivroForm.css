@@ -1,6 +1,6 @@
 .livro-form {
-  max-width: 300rem;
-  min-width: 40rem;
+  width: 100%;
+  max-width: 40rem;
   margin: 2rem auto;
   background: white;
   padding: 2rem;
@@ -64,19 +64,6 @@
 
 }
 
-/*.form-input textarea{
-
-  padding:10px;
-  resize:vertical;
-  min-height:120px;
-
-}
-
-.form-input select{
-  padding:10px;
-
-}*/
-
 .form-input input,
 .form-input select,
 .form-input textarea {
@@ -115,12 +102,6 @@
 
   box-shadow:
     0 0 0 4px rgba(50, 146, 231, 0.15);
-}
-
-.livro-form button:disabled {
-    background: #bdbdbd;
-    cursor: not-allowed;
-    opacity: 0.8;
 }
 
 
