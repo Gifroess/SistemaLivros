@@ -4,8 +4,7 @@ footer{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    min-height: 220px:
-    gap: 0.5rem;
+    height: 7rem;
     paddim: 2rem;
 
     p,a{
