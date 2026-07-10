@@ -22,9 +22,9 @@ export class AuthController {
                 return;
             }
 
-            // Validação 3: Checar se a senha tem no mínimo 4 dígitos
-            if (senha.length < 4) {
-                res.status(400).json({ message: "A senha deve ter no mínimo 4 dígitos." });
+            // Validação 3: Checar se a senha tem no mínimo 6 dígitos
+            if (senha.length < 6) {
+                res.status(400).json({ message: "A senha deve ter no mínimo 6 dígitos." });
                 return;
             }
 
