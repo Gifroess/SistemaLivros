@@ -28,7 +28,7 @@ export async function buscarLivrosGoogle(termo: string): Promise<LivroGoogle[]>
             credentials: "include",
         }
     );
-    
+
     if (!response.ok) {
         throw new Error("Erro ao buscar livro");
     }

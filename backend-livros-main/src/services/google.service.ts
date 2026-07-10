@@ -1,9 +1,9 @@
 export class GoogleBooksService {
     async buscarLivroExterno(termoBusca: string) {
         const apiKey = process.env.GOOGLE_BOOKS_KEY;
-        const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(termoBusca)}&maxResults=5&key=${apiKey}`;
+        const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(termoBusca)}&maxResults=5&key=${apiKey}`; 
         const resposta = await fetch(url);
-        
+
         if (!resposta.ok) {
             throw new Error("Erro ao consultar a API do Google Books.");
         }
