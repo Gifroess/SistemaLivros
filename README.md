@@ -1,4 +1,4 @@
-# 📚 Sistema de Gerenciamento de Livros
+# 📚 Biblioteca de Livros
 
 Um sistema completo para gerenciamento de uma biblioteca pessoal, permitindo que usuários criem uma conta, organizem suas leituras, atribuam notas e escrevam avaliações.
 
