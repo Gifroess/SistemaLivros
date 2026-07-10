@@ -127,7 +127,7 @@ npx prisma studio
 
 ---
 
-# 📌 Frontend
+## 📌 Frontend
 
 Entre na pasta do frontend:
 
