@@ -6,7 +6,7 @@ export default function Footer(){
         <footer className='footer'>
             <section>
                 <p style={{textAlign: "center"}}>
-                    Feito com 🎮 por{" "}
+                    Feito por{" "}
                     <a href="https://github.com/Gifroess" target="_blank">
                         Giovana Fróes
                     </a>

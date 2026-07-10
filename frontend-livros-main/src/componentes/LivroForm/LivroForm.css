@@ -35,7 +35,7 @@
   align-self: center;
   border: none;
   border-radius: 8px;
-  background: #0a8a01;
+  background: #3292E7;
   color: white;
   font-size: 1rem;
   cursor: pointer; 
@@ -64,7 +64,7 @@
 
 }
 
-.form-input textarea{
+/*.form-input textarea{
 
   padding:10px;
   resize:vertical;
@@ -75,6 +75,46 @@
 .form-input select{
   padding:10px;
 
+}*/
+
+.form-input input,
+.form-input select,
+.form-input textarea {
+
+  width: 100%;
+
+  padding: 0.9rem 1rem;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  background: white;
+
+  transition: all 0.2s ease;
+}
+
+.form-input label {
+
+  font-weight: 600;
+
+  color: black;
+
+  margin-bottom: 0.3rem;
+}
+
+.form-input input:focus,
+.form-input select:focus,
+.form-input textarea:focus {
+
+  outline: none;
+
+  border-color: #3292E7;
+
+  box-shadow:
+    0 0 0 4px rgba(50, 146, 231, 0.15);
 }
 
 .livro-form button:disabled {
