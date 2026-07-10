@@ -13,6 +13,7 @@ export function authMiddleware(req: Request, res: Response, next: NextFunction)
         res.status(400).json({
             message: "Token nao encontradoo"
         });
+        return;
     }
 
     try{
