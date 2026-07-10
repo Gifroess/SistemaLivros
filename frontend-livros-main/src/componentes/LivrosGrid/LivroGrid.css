@@ -1,61 +1,11 @@
-.biblioteca{
-    display:flex;
-    flex-direction:column;
-    gap:3rem;
-}
+.grid {
+    display: grid;
+    
+    align-items: center;
+    align-self: center;
 
-.categoria h2{
-    margin-bottom:1rem;
-    font-size:2rem;
-    color:#1e293b;
-}
+    grid-template-columns:
+        repeat(auto-fill, minmax(250px, 1fr));
 
-.carrossel-container{
-    display:flex;
-    align-items:center;
-    gap:1rem;
-}
-
-.scroll-livros{
-    display:flex;
-    gap:1.5rem;
-
-    overflow-x:auto;
-
-    flex:1;
-
-    scroll-behavior:smooth;
-
-    scrollbar-width:none;
-}
-
-.scroll-livros::-webkit-scrollbar{
-    display:none;
-}
-
-.seta{
-    width:60px;
-    height:60px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:white;
-
-    box-shadow:
-        0 6px 18px rgba(0,0,0,.18);
-
-    font-size:1.8rem;
-
-    cursor:pointer;
-
-    flex-shrink:0;
-
-    transition:.2s;
-}
-
-.seta:hover{
-    background:#3292E7;
-    color:white;
+    gap: 1.5rem;
 }

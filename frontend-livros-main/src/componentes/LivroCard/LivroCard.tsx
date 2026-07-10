@@ -17,41 +17,24 @@ export default function LivroCard({ livro, onDelete}: LivroCardProps) {
       <Image
         src={livro.imagem}
         alt={livro.titulo} 
-        width={180}
-        height={250}
+        width={300}
+        height={450}
         className="card-img"
       />
 
-      <div className="card-info">
+      <h2>{livro.titulo}</h2>
 
-        <h2>{livro.titulo}</h2>
+      <p>⭐ {livro.nota}</p>
 
-        <p className="review">
-          {livro.review}
-        </p>
+      <div className="btn-acoes">
+        <Link href={`/livros/${livro.id}/editar`}>
+          Editar
+        </Link>
 
-        <p className="nota">
-          ⭐ {livro.nota}
-        </p>
-
-        <div className="btn-acoes">
-
-          <Link
-            href={`/livros/${livro.id}/editar`}
-          >
-            Editar
-          </Link>
-
-          <button
-            onClick={() => onDelete(livro.id)}
-          >
-            Excluir
-          </button>
-
-        </div>
-
+        <button onClick={() => onDelete?.(livro.id)}>
+          Excluir
+        </button>
       </div>
-
     </div>
   );
 }
