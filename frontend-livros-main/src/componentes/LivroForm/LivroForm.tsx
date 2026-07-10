@@ -1,9 +1,10 @@
 "use client";
 
-import '@/componentes/FilmeForm/FilmeForm.css'
+import '@/componentes/LivroForm/LivroForm.css'
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import BuscaLivro from "../BuscaLivro/BuscaLivro"
+import {BuscaLivro} from "../BuscaLivro/BuscaLivro"
 import { Livro, LivroGoogle, StatusLivro } from "@/tipos/livro";
 import {createLivro, updateLivro} from "@/services/livro.services"
 
@@ -38,9 +39,6 @@ export default function LivroForm({ livro }: Props) {
     livro?.nota ?? 0
     );
 
-    const livros = await buscarLivrosGoogle(busca);
-
-    setResultados(livros);
    
     async function handleSubmit( e: React.SyntheticEvent) {
         e.preventDefault();
