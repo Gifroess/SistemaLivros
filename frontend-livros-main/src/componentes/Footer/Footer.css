@@ -1,17 +1,14 @@
 footer{
     margin-top: auto;
-    background-color: rgb(58, 58, 58);
+    background-color: #0077CC;
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 7rem;
-
-    background: linear-gradient(90deg, #ffffff, #b8e4ff);
-    box-shadow: 0 -0.2rem 0.8rem rgba(0, 0, 0, 0.08);
-    gap: 0.5rem;
+    paddim: 2rem;
 
     p,a{
         text-decoration: none;
-        color: black;
+        color: white;
     }
 }

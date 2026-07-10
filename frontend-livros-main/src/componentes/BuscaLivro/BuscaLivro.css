@@ -1,13 +1,22 @@
 .busca-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .busca-container input {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    transition: .2s;
+}
+
+.busca-container input:focus{
+  outline: none;
+  border-color: #3292E7;
+
+  box-shadow:
+    0 0 0 4px rgba(50, 146, 231, 0.15);
 }
 
 .resultados {
@@ -41,12 +50,14 @@
 }
 
 .resultado-card button {
-    padding: 8px 16px;
+    padding: .8rem 1.2rem;
     border: none;
     border-radius: 8px;
-    background: #0a8a01;
+    background: #3292E7;
     color: white;
     cursor: pointer;
+    font-weight: 600;
+    transition: .2s;
 }
 
 .resultado-card button:hover {

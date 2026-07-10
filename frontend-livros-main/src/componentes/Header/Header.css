@@ -1,11 +1,11 @@
 .header{
-    background: linear-gradient(90deg, #ffffff, #b8e4ff);
+    background: linear-gradient(90deg, #FAFAFA, #3292E7,#AFD9F7, #FAFAFA);
     display: flex;
     justify-content: space-between;
     
-    height: 5rem;
-    padding: 0 2rem;
-    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
+    height: 72px;
+    padding: 0 3rem;
+    border-bottom: 1px solid #E5E5E5;
 
     a,ul, button{
         text-decoration: none;
@@ -38,9 +38,9 @@
 
     height: 100%;
 
-    color: #222;
+    color: #444;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
     transition: color 0.2s;
 }
 
@@ -51,51 +51,36 @@
 }
 
 .header div a[href="/login"] {
-
     display: inline-block;
-
     padding: 0.7rem 1.8rem;
-
     border: 0.1rem solid #3292E7;
     border-radius: 2rem;
-
     color: #3292E7;
     font-size: 1rem;
     font-weight: 600;
-
     transition: all 0.2s;
-
 }
 
 .header div a[href="/create"] {
-
     display: inline-block;
-
     padding: 0.7rem 1.8rem;
-
     border-radius: 2rem;
-
-    background-color: #459CF7;
-
+    background-color: #3292E7;
     color: white;
     font-size: 1rem;
     font-weight: 600;
-
     transition: opacity 0.2s;
-
 }
 
 .header div a[href="/create"]:hover {
-
+    background: #2385DA
     opacity: 0.9;
 
 }
 .header div a[href="/login"]:hover {
-
-    background-color: #459CF7;
+    background-color: #3292E7;
     color: white;
     border-color: transparent;
-
 }
 
 .logout-button {
