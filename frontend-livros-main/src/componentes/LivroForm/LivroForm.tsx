@@ -109,10 +109,9 @@ export default function LivroForm({ livro }: Props) {
 
             )}
 
-            <h2>{titulo}</h2>
+                <h2>{titulo}</h2>
 
-            <p>{autor}</p>
-
+                <p>{autor}</p>
         </div>
 
         )}
