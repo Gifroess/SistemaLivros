@@ -2,6 +2,7 @@ import "@/componentes/Header/Header.css";
 import { cookies } from "next/headers";
 import Link from "next/link";
 import LogoutButton from "../LogoutButton/LogoutButton";
+import Image from "next/image";
 
 export default async function Header(){
 
@@ -14,8 +15,19 @@ export default async function Header(){
         <header className='header'>
                 <nav>
                     <ul>
-                        <li><Link href="/">Home</Link></li>
-                    </ul>
+                        <li>
+                            <Link href="/" className="home-link">
+                                <Image
+                                    src="/assets/home.png"
+                                    alt=""
+                                    width={28}
+                                    height={28}
+                                />
+
+                                <span>Home</span>
+                            </Link>
+                        </li>
+                    </ul>    
                 </nav>
                 <div>
                     <ul>

@@ -1,8 +1,13 @@
+h1{
+  color:#3292E7;
+}
+
 .livro-form {
   width: 100%;
   max-width: 40rem;
   margin: 2rem auto;
-  background: white;
+  /* background: white; */
+  background: #3293e72d;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow:

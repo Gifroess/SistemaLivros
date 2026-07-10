@@ -1,11 +1,13 @@
 .header{
-    background: linear-gradient(90deg, #FAFAFA, #3292E7,#AFD9F7, #FAFAFA);
+     /* background: linear-gradient(90deg, #c0dff5, #AFD9F7,#c0dff5);  */
+
     display: flex;
     justify-content: space-between;
     
     height: 72px;
     padding: 0 3rem;
     border-bottom: 1px solid #E5E5E5;
+    box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, .1);
 
     a,ul, button{
         text-decoration: none;
@@ -38,17 +40,18 @@
 
     height: 100%;
 
-    color: #444;
+    color: #3292E7;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 700;
     transition: color 0.2s;
 }
 
 .header nav a:hover {
 
-    color: #3292E7;
+    color: #444;
 
 }
+
 
 .header div a[href="/login"] {
     display: inline-block;
@@ -86,15 +89,19 @@
 .logout-button {
     display: inline-block;
     padding: 0.7rem 1.8rem;
-    border-radius: 2rem;
-    background-color: #459CF7;
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
+    /* border-radius: 2rem;
+    background-color: #add1f7;  */
+    background: none;
+    border:none;
+    color: #3292E7;
+
+    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
     transition: opacity 0.2s;
 }
 
 .logout-button:hover {
     opacity: 0.9;
+    color: #444;
 }

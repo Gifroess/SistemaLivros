@@ -6,7 +6,8 @@
 }
 
 .homeHeader {
-  background: rgb(255, 255, 255);
+  /* background: rgb(255, 255, 255); */
+  background: #3293e72d;
 
   padding: 1.5rem;
   min-width: 30rem;
@@ -21,23 +22,33 @@
   margin-bottom: 2rem;
 }
 
+.tituloBiblioteca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tituloBiblioteca img {
+    object-fit: contain;
+}
+
 .homeHeader h1 {
   font-size: 2.2rem;
   margin-bottom: 0.25rem;
 }
 
 .homeHeader p {
-  color: #a1a1a1;
+  color: #020202;
 }
 
 .btnAdd {
-  background: #0548ae;
+  background: #3292E7;
   color: white;
 
   height: 100%;
   text-decoration: none;
   padding: 0.8rem 1rem;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: bold;
   transition: opacity 0.2s;
 }

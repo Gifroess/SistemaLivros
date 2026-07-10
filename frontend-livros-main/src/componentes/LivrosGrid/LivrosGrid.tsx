@@ -113,7 +113,7 @@ export default function LivroGrid({ livros }: Props) {
         titulo={
           <>
             <img
-              src="/queroler.png"
+              src="/assets/queroler2.png"
               className="icone-categoria"
               alt="Quero ler"
             />
@@ -128,7 +128,7 @@ export default function LivroGrid({ livros }: Props) {
         titulo={
           <>
             <img
-              src="/lendo.png"
+              src="/assets/lendo2.png"
               className="icone-categoria"
               alt="Estou lendo"
             />
@@ -143,7 +143,7 @@ export default function LivroGrid({ livros }: Props) {
         titulo={
           <>
             <img
-              src="/lido.png"
+              src="/assets/lido2.png"
               className="icone-categoria"
               alt="Livros lidos"
             />
