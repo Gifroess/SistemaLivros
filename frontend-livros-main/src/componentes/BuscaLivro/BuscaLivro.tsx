@@ -8,8 +8,8 @@ import { buscarLivrosGoogle } from "@/services/livro.services";
 
 import "./BuscaLivro.css";
 
-interface BuscaLivroProps{
-    onSelect: (livro:LivroGoogle) => void;
+interface BuscaLivroProps {
+  onSelect: (livro: LivroGoogle) => void;
 }
 
 export function BuscaLivro({ onSelect }: BuscaLivroProps) {
@@ -18,7 +18,6 @@ export function BuscaLivro({ onSelect }: BuscaLivroProps) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-
     if (!busca.trim()) {
       setResultados([]);
       setLoading(false);
@@ -26,11 +25,10 @@ export function BuscaLivro({ onSelect }: BuscaLivroProps) {
     }
 
     const timeout = setTimeout(async () => {
-
       try {
         setLoading(true);
 
-      const livros = await buscarLivrosGoogle(busca);
+        const livros = await buscarLivrosGoogle(busca);
 
         setResultados(livros);
       } catch (error) {
@@ -39,26 +37,20 @@ export function BuscaLivro({ onSelect }: BuscaLivroProps) {
       } finally {
         setLoading(false);
       }
-
     }, 500);
 
     return () => clearTimeout(timeout);
-
-}, [busca]);
+  }, [busca]);
 
   function selecionarLivro(livro: LivroGoogle) {
-
     onSelect(livro);
 
     setBusca("");
-
     setResultados([]);
-
-  
+  }
 
   return (
     <div className="busca-container">
-
       <input
         type="text"
         placeholder="Pesquisar livro..."
@@ -69,19 +61,16 @@ export function BuscaLivro({ onSelect }: BuscaLivroProps) {
       {loading && <p>Buscando livros...</p>}
 
       {!loading && busca.trim() && resultados.length === 0 && (
-        <p>Nenhum livro encontrado.</p>)}
+        <p>Nenhum livro encontrado.</p>
+      )}
 
       <div className="resultados">
-
         {resultados.map((livro, index) => (
-
           <div
             className="resultado-card"
             key={`${livro.titulo}-${livro.autor}-${index}`}
           >
-
             {livro.imagem ? (
-
               <Image
                 src={livro.imagem}
                 alt={`Capa do livro ${livro.titulo}`}
@@ -89,21 +78,13 @@ export function BuscaLivro({ onSelect }: BuscaLivroProps) {
                 height={100}
                 className="resultado-img"
               />
-
             ) : (
-
-              <div className="sem-imagem">
-                Sem capa
-              </div>
-
+              <div className="sem-imagem">Sem capa</div>
             )}
 
             <div className="resultado-info">
-
               <h3>{livro.titulo}</h3>
-
               <p>{livro.autor}</p>
-
             </div>
 
             <button
@@ -112,14 +93,9 @@ export function BuscaLivro({ onSelect }: BuscaLivroProps) {
             >
               Selecionar
             </button>
-
           </div>
-
         ))}
-
       </div>
-
     </div>
   );
-}
 }
