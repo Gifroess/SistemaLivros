@@ -1,19 +1,17 @@
 .login-form {
-  max-width: 24rem;
-  min-width: 22rem;
+  max-width: 28rem;
+  min-width: 24rem;
   width: 100%;
   margin: 5rem auto;
-  background: white;
-  padding: 3rem 2.5rem 2.5rem;
+  background: #AFD9F7;
+  padding: 2.5rem;
   overflow: hidden;
-  border-radius: 1rem;
-  box-shadow:
-    0 1.2rem 2.8rem rgba(0, 0, 0, 0.15);
-
+  border-radius: 1.2rem;
+  box-shadow:0 0.5rem 1.5rem rgba(0,0,0,.08);
   display: flex;
   flex-direction: column;
 
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .login-form h2{
@@ -21,7 +19,7 @@
   padding: 2rem;
   text-align: center;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   color: white;
   background-color: #459CF7;
   margin-bottom: 1rem 1rem 0 0;
@@ -32,10 +30,10 @@
   justify-content: center;
 
   input{
-    padding: 1rem 1.2rem;
-    line-height: 1.2rem;
     width: 100%;
-    border: 0.1rem solid #d8d8d8;
+    line-height: 1.2rem;
+    padding: 1rem 1.2rem;
+    border: 2px solid #D6E0EA;
     border-radius: 3rem;
     background: white;
     font-size: 1rem;
@@ -44,7 +42,7 @@
 }
 
   input:focus {
-    border-color: #459CF7;
+    border-color: #3292E7;
   }
 
   gap: 0.4rem;
@@ -54,11 +52,12 @@
   padding: 0.9rem;
   max-width: 22rem;
   min-width: 18rem;
-  width: 100%
+  width: 100%;
+  height: 3.2rem;
   align-self: center;
   border: none;
   border-radius: 2rem;
-  background-color: #459CF7;
+  background-color: #3292E7;
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -67,5 +66,6 @@
 }
 
 .login-form button:hover {
+  background: #2787DC;
   opacity: 0.9;
 }
