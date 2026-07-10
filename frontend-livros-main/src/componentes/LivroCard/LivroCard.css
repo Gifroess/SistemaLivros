@@ -1,81 +1,95 @@
 .card {
-  background: white;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
+    width: 700px;
+    min-width: 700px;
+    max-width: 700px;
+    background: #dfe5ea;
+    border: 2px solid #c6d0d9;
+    border-radius: 18px;
+    padding: 1rem;
+    display: flex;
+    gap: 1.5rem;
 
-  box-shadow:
-    0 0.1rem 0.5rem rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 8px 24px rgba(0,0,0,.15);
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transition: .25s;
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 0.5rem 1.1rem rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 32px rgba(0,0,0,.22);
 }
 
 .card-img {
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  display: block;
-  object-fit: cover;
+    width: 180px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
 }
 
-.card h2 {
-  font-size: 1rem;
-  padding: 1rem 1rem 0.25rem;
-  line-height: 1.4;
-  min-height: 3rem;
+.card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.card p {
-  padding: 0 1rem;
-  color: #5e5b5b;
-  margin-bottom: 1rem;
+.card-info h2 {
+    margin: 0;
+    margin-bottom: .8rem;
+    font-size: 1.7rem;
+    color: #1e293b;
+}
+
+.review {
+
+    color: #334155;
+    line-height: 1.6;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+
+    -webkit-line-clamp: 6;
+
+    -webkit-box-orient: vertical;
+}
+
+.nota {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .btn-acoes {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0 1rem 1rem;
-  margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-acoes a,
+.btn-acoes button {
+    flex: 1;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .btn-acoes a {
-  flex: 1;
-
-  text-align: center;
-
-  text-decoration: none;
-
-  background: #0a8a01;
-  color: white;
-
-  padding: 0.6rem;
-
-  border-radius: 6px;
-
-  transition: opacity 0.2s;
-}
-
-.btn-acoes a:hover {
-  opacity: 0.5;
+    background: #3292E7;
+    color: white;
+    border: none;
 }
 
 .btn-acoes button {
-  flex: 1;
-  border: none;
-  cursor: pointer;
-  background: #dc2626;
-  color: white;
-  border-radius: 6px;
-  padding: 0.6rem;
-}
-
-.btn-acoes button:hover{
-  opacity: 0.5;
+    background: #ef4444;
+    color: white;
+    border: none;
 }
