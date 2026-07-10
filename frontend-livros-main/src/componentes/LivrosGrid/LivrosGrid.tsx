@@ -1,12 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { Livro } from "@/tipos/livro";
 
 import { deleteLivro } from "@/services/livro.services";
 import LivroCard from "../LivroCard/LivroCard";
-import '@/componentes/LivrosGrid/LivroGrid.css'
+import "@/componentes/LivrosGrid/LivroGrid.css";
 
 interface Props {
   livros: Livro[];
@@ -16,11 +16,11 @@ export default function LivroGrid({ livros }: Props) {
 
   const router = useRouter();
 
-  async function handleDelete (id: number) {
+  async function handleDelete(id: number) {
     await deleteLivro(id);
     router.refresh();
   }
-    
+
   const queroLer = livros.filter(
     (livro) => livro.status === "QUERO_LER"
   );
@@ -33,13 +33,15 @@ export default function LivroGrid({ livros }: Props) {
     (livro) => livro.status === "LIDO"
   );
 
+
   function Categoria({
     titulo,
     livrosStatus,
   }: {
-    titulo: string;
+    titulo: ReactNode;
     livrosStatus: Livro[];
   }) {
+
     const scrollRef = useRef<HTMLDivElement>(null);
 
     const moverEsquerda = () => {
@@ -72,10 +74,12 @@ export default function LivroGrid({ livros }: Props) {
             ❮
           </button>
 
+
           <div
             className="scroll-livros"
             ref={scrollRef}
           >
+
             {livrosStatus.map((livro) => (
               <LivroCard
                 key={livro.id}
@@ -83,7 +87,9 @@ export default function LivroGrid({ livros }: Props) {
                 onDelete={handleDelete}
               />
             ))}
+
           </div>
+
 
           <button
             className="seta seta-direita"
@@ -98,23 +104,55 @@ export default function LivroGrid({ livros }: Props) {
     );
   }
 
+
   return (
     <div className="biblioteca">
 
+
       <Categoria
-        titulo="📚 Quero Ler"
+        titulo={
+          <>
+            <img
+              src="/queroler.png"
+              className="icone-categoria"
+              alt="Quero ler"
+            />
+            Quero Ler
+          </>
+        }
         livrosStatus={queroLer}
       />
 
+
       <Categoria
-        titulo="📖 Estou Lendo"
+        titulo={
+          <>
+            <img
+              src="/lendo.png"
+              className="icone-categoria"
+              alt="Estou lendo"
+            />
+            Estou Lendo
+          </>
+        }
         livrosStatus={lendo}
       />
 
+
       <Categoria
-        titulo="✅ Lidos"
+        titulo={
+          <>
+            <img
+              src="/lido.png"
+              className="icone-categoria"
+              alt="Livros lidos"
+            />
+            Lidos
+          </>
+        }
         livrosStatus={lidos}
       />
+
 
     </div>
   );
