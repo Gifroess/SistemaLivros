@@ -1,10 +1,10 @@
-# 📚 Biblioteca de Livros
+# Biblioteca de Livros
 
 Um sistema completo para gerenciamento de uma biblioteca pessoal, permitindo que usuários criem uma conta, organizem suas leituras, atribuam notas e escrevam avaliações.
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - Cadastro de usuário;
 - Login de usuário;
@@ -20,7 +20,7 @@ Um sistema completo para gerenciamento de uma biblioteca pessoal, permitindo que
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Frontend
 
@@ -45,9 +45,9 @@ Um sistema completo para gerenciamento de uma biblioteca pessoal, permitindo que
 
 ---
 
-# ⚙️ Configuração e Execução
+# Configuração e Execução
 
-## 📌 Backend
+## Backend
 
 Entre na pasta do backend:
 
@@ -127,7 +127,7 @@ npx prisma studio
 
 ---
 
-## 📌 Frontend
+## Frontend
 
 Entre na pasta do frontend:
 
@@ -185,7 +185,7 @@ http://localhost:3000
 
 ---
 
-# 📸 Screenshots do Sistema
+# Screenshots do Sistema
 
 ## Página Login
 
@@ -201,7 +201,7 @@ http://localhost:3000
 
 ---
 
-# 👥 Integrantes
+# Integrantes
 
 Conheça os desenvolvedores responsáveis por este projeto:
 
