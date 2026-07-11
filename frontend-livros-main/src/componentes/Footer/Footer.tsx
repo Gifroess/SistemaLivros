@@ -18,7 +18,11 @@ export default function Footer(){
                     <a href="https://github.com/nottfael" target="_blank">
                         Rafael Leite
                     </a>
+                    <br></br>
+                                <a style={{textAlign: "center"}} href="https://www.flaticon.com/free-icons/estate" title="estate icons">Estate icons created by hqrloveq - Flaticon</a>
+    
                 </p>
+
             </section>
         </footer>
     );
