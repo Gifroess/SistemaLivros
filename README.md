@@ -197,7 +197,11 @@ http://localhost:3000
 
 ## Página Minha Biblioteca
 
-![Biblioteca](./screenshots/biblioteca.png)
+![Biblioteca](./screenshots/main.png)
+
+## Página Adicionar Livros
+
+![Livro](./screenshots/search.png)
 
 ---
 
